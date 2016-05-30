@@ -30,7 +30,7 @@ public class App
 			} catch (JsonProcessingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			} 
 	    	
 	    	log.info(json);
 	        System.out.println( i + "::::::::::Hello World!" );
