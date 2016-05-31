@@ -1,5 +1,9 @@
 package me.wini.logstash.logback;
 
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -9,4 +13,6 @@ public class Account {
 	private String password;
 	private String address;
 	private String email;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+	private Date created;
 }

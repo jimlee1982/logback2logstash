@@ -1,5 +1,7 @@
 package me.wini.logstash.logback;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -20,6 +22,8 @@ public class App
 	    	account.setPassword("password" + i);
 	    	account.setAddress("korea");
 	    	account.setEmail("tester" + i + ".gmail.com");
+	    	Date now = new Date();
+	    	account.setCreated(now);
 	
 	    	
 	    	ObjectMapper mapper = new ObjectMapper();
@@ -33,7 +37,6 @@ public class App
 			} 
 	    	
 	    	log.info(json);
-	        System.out.println( i + "::::::::::Hello World!" );
     	}
     }
 }
