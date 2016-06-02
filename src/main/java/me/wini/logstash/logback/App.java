@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
+import static net.logstash.logback.argument.StructuredArguments.*;
+import static net.logstash.logback.marker.Markers.*;
+
 /**
  * Hello world!
  *
@@ -15,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 public class App 
 {
     public static void main( String[] args ) {
-    	for(int i = 0; i < 10; i++) {
+    	for(int i = 0; i < 1000; i++) {
 	    	Account account = new Account();
 	    	account.setId(i);
 	    	account.setUsername("tester" + i);
@@ -24,10 +27,9 @@ public class App
 	    	account.setEmail("tester" + i + ".gmail.com");
 	    	Date now = new Date();
 	    	account.setCreated(now);
-	
 	    	
 	    	ObjectMapper mapper = new ObjectMapper();
-	    	
+	    		    	
 	    	String json = "";
 	    	try {
 				 json = mapper.writeValueAsString(account);
@@ -35,6 +37,7 @@ public class App
 				// TODO Auto-generated catch block test2
 				e.printStackTrace();
 			} 
+	    	
 	    	
 	    	log.info(json);
     	}
